@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="clicker.css">
+	<script defer src="clicker.js"></script>
+</head>
+<body>
+
+	<div id="mainMenu" class="main_menu menu_transform">
+		<div class="main_menu_setBtn_conteiner"><!--контейнеры кнопок настройки-->
+			<div id="settingsBtn" class="btn setBtn">
+				<span>настройки</span>
+			</div>
+			<div id="authorBtn" class="btn setBtn">
+				<span>авторы</span>
+			</div>
+		</div><!--
+		--><div class="main_menu_upgBtn_container"><!--контейнеры кнопок улучшения-->
+
+			<div id="incCoinsCost" class="btn">
+				<span>увеличить стоимость монет</span>
+				<span id="coinCostLvl" class="lvl"></span>
+			</div>
+			<div id="incSpawnChanse" class="btn">
+				<span>шанс выпадения большой монеты</span>
+				<span id="spawnChanseLvl" class="lvl"></span>
+			</div>
+			<div id="spawnRateLvl" class="btn">
+				<span>шанс появления супер монеты</span>
+				<span id="incRateLvl" class="lvl"></span>
+			</div>
+		</div>
+
+		<div id="menuSwitcher" class="menu_switcher"></div>
+	</div>
+
+	<div id="setMenu" class="settings_window semiWid"><span>Меню настроек</span></div>
+	<div id="authorMenu" class="authors_window semiWid"><span>Меню автора</span></div>
+
+	<!--рабочая область-->
+
+	<div id="gameField" class="gameField">
+		<div id="moneyBag" class="moneyBag">
+			
+		</div>
+	</div>
+
+	<!--главный банк-->
+
+	<div id="bank" class="mainBank">
+		<span></span>
+	</div>
+		
+
+	<template id="coins">
+		<div id="coin" class="coins">
+			
+		</div>
+
+		<div class="displayBank">
+			<span></span>
+		</div>
+
+		<div id="bonusBigCoin" class="bigCoin">
+		</div>
+	</template>
+
+
+
+
+
+
+	
+</body>
+</html>

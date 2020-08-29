@@ -1,0 +1,457 @@
+body,html{
+	width: 100%;
+	height: 100%;
+	background-color: #d4c9be;
+	font-family: arial;
+	font-weight: bold;
+	user-select: none;
+}
+
+/*меню автора/настроек*/
+	.semiWid{
+		display: none;
+		width: 500px;
+		height: 500px;
+
+		position: absolute;
+		left: calc(50% - 250px);
+		top: calc(50% - 250px);
+
+		justify-content: center;
+		align-items: center;
+
+		box-sizing: border-box;
+
+		background-color:#67676775 ;
+
+		border:1px gray solid;
+
+		z-index:300;
+	}
+/*глобальные классы трансформации*/
+
+.menu_transform{
+	transform: translateY(-250px);
+}
+
+.switch_semi_wid{
+	display: inline-flex;
+}
+
+.up{
+	animation:up 1s forwards;
+}
+/*главное меню и его переключатель*/
+
+.main_menu{
+	display: inline-box;
+	position: absolute;
+	width: 500px;
+	height: 220px;
+	background-color: #67943b;
+	left: calc(50% - 250px);
+	top: 0;
+	transition: .3s;
+
+	color: black;
+
+	vertical-align: top;
+
+	flex-wrap: wrap;
+	align-items: top;
+	justify-content: flex-start;
+
+	z-index: 200;
+}
+
+.mainBank{
+	display: inline-flex;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background-color: transparent;
+
+	background-image: url(chest.png);
+	background-position: 50% 50%;
+	background-size: cover;
+
+
+	justify-content: center;
+	align-items: center;
+
+	color:#fff6d2;
+
+	font-size: 50px;
+
+	left: calc(50% - 150px);
+	top: 65%;
+
+	pointer-events: none;
+}
+
+.mainBank span{
+	position: relative;
+	top: 25px;
+	filter: drop-shadow(0 0 15px gold);
+}
+
+.menu_switcher{
+	display: inline-block;
+	position: absolute;
+	bottom: -100px;
+	width: 100px;
+	height: 100px;
+	background-color: #82b550;
+	left: calc(50% - 50px);
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+
+	transition: .2s;
+
+	z-index: 201;
+
+	cursor: pointer;
+}
+.menu_switcher:hover{
+	filter: brightness(1.1);
+}
+.menu_switcher:active{
+	filter: brightness(1.3);
+}
+
+/*Контейнера меню*/
+
+.main_menu_setBtn_conteiner{/*контейнер кнопок автора и настроек*/
+	display: inline-flex;
+	width: 100%;
+	height: 55px;
+	background-color: gray;
+	justify-content: center;
+	vertical-align: top;
+}
+
+.main_menu_upgBtn_container{/*контейнер кнопок улучшения*/
+	display: inline-flex;
+	width: 100%;
+	height: 55px;
+	background-color: gray;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/*кнопки меню*/
+
+.btn{
+	display: inline-flex;
+	width: 100%;
+	height: 55px;
+	background-color: #9fc197;
+
+	justify-content: left;
+	align-items: center;
+
+	box-sizing: border-box;
+	padding-left: 50px;
+
+	transition: .3s;
+}
+
+.btn span{
+		pointer-events: none;
+	}
+	
+.btn:hover{
+	filter: brightness(1.1);
+	z-index: 100;
+}
+.btn:active{
+	filter: brightness(1.2);
+}
+
+.setBtn{
+	background-color: #7ca573;
+}
+
+
+.lvl{
+	display: flex;
+	position: absolute;
+	right: 10px;
+}
+
+/*рабочее/игровое поле*/
+
+.gameField{
+	width: 1000px;
+	height: 500px;
+	background-color: transparent;
+
+	position: absolute;
+	left: calc(50% - 500px);
+	top: calc(50% - 250px);
+
+	background-image: url(https://c7.hotpng.com/preview/582/707/825/old-wood-texture.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.moneyBag{
+	display: inline-flex;
+	width: 200px;
+	height: 200px;
+
+	position: absolute;
+	left: calc(50% - 100px);
+	top: calc(50% - 100px);
+	background-color: transparent;
+
+	background-image: url(coinbag.png);
+	background-position: 50% 70%;
+	background-size: 250px 250px;
+
+	transition: .3s;
+
+	cursor: pointer;
+
+	border-radius: 50%;
+}
+
+
+
+
+/*фантомное наличие банка по клику*/
+
+.displayBank{
+	display: inline-flex;
+
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	width: 50px;
+	height: 25px;
+	font-size: 25px;
+
+	animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-name:showBank;
+
+    z-index: 300;
+
+    pointer-events: none;
+
+    filter: invert();
+}
+
+/*монета*/
+
+.rndBigCoin{
+	opacity: 0;
+}
+
+.bigCoin{
+	display: inline-flex;
+	position: absolute;
+
+	width: 100px;
+	height: 100px;
+
+	background-color: gold;
+
+	background-image: url(coin.png);
+	background-position:-3px -2px;
+	background-size:cover;
+
+	border-radius: 50%;
+
+	opacity: 1;
+
+	transition: .3s;
+
+	filter: drop-shadow(0 0 10px gold);
+
+	
+}
+
+.coins{
+	display: inline-flex;
+	position: absolute;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: gold;
+
+	background-image: url(coin.png);
+	background-position: 50% 50%;
+	background-size:cover;
+
+	font-size: 30px;
+
+	z-index: 220;
+	align-items: center;
+	justify-content: center;
+
+	animation-name:none;
+	animation:.5s linear forwards;
+
+	pointer-events: none;
+
+	filter: drop-shadow(0 0 10px gold);
+}
+
+.dollar{
+	color: #b3640a;
+	font-family: arial;
+	font-weight: bold;
+}
+
+/*анимация значения банка по клику*/
+
+@keyframes showBank{
+	from{
+		transform: translateY(-0px);
+		opacity: 1;
+	}
+	to{
+		transform: translateY(-150px);
+		opacity: 0;
+	}
+}
+
+/*анимации монет и мешка по клику*/
+
+@keyframes coinFlipOne{
+	0% {
+    	transform:  translate(-1px,-13px)  scaleX(1.00) ;
+ 	 }
+  20% {
+   	 	transform:  translate(8px,-43px)  scaleX(1.01) ;
+  	}
+  40% {
+    	transform:  translate(19px,-52px)  scaleX(1.03) ;
+   		opacity: 1;
+  	}
+  60% {
+   		transform:  translate(27px,-56px)  scaleX(1.04) ;
+  	}
+  100% {
+	    transform:  translate(36px,56px)  ;
+	    opacity: 0;
+	}
+}
+@keyframes coinFlipTwo{
+	0% {
+    	transform:  translate(-1px,-13px)  scaleX(1.00) ;
+  }
+  20% {
+    	transform:  translate(-8px,-43px)  scaleX(1.01) ;
+  }
+  40% {
+	    transform:  translate(-19px,-52px)  scaleX(1.03) ;
+	    opacity: 1;
+  }
+  60% {
+    	transform:  translate(-27px,-56px)  scaleX(1.04) ;
+  }
+  100% {
+	    transform:  translate(-36px,56px)  ;
+	    opacity: 0;
+	}
+}
+
+@keyframes coinFlipThree{
+	0% {
+    	transform:  translate(0px,-13px)  scaleX(1.00) ;
+  }
+  20% {
+    	transform:  translate(0px,-43px)  scaleX(1.01) ;
+  }
+  40% {
+	    transform:  translate(0px,-52px)  scaleX(1.03) ;
+	    opacity: 1;
+  }
+  60% {
+    	transform:  translate(0px,-56px)  scaleX(1.04) ;
+  }
+  100% {
+	    transform:  translate(0px,56px)  ;
+	    opacity: 0;
+	}
+}
+
+@keyframes bigCoinTransform{
+	 0% {
+    transform:  translate(24px,-34px)  ;
+  }
+  3% {
+    transform:  translate(65px,-67px)  ;
+  }
+  5% {
+    transform:  translate(121px,-89px)  ;
+  }
+  8% {
+    transform:  translate(179px,-50px)  ;
+  }
+  11% {
+    transform:  translate(192px,-1px)  ;
+  }
+  14% {
+    transform:  translate(202px,-18px)  ;
+  }
+  16% {
+    transform:  translate(224px,-24px)  ;
+  }
+  18% {
+    transform:  translate(244px,-7px)  ;
+  }
+  21% {
+    transform:  translate(244px,-7px)  ;
+  }
+  100% {
+    transform:  translate(244px,-7px)  ;
+  }
+}
+
+@keyframes bigCoinTransform2{
+  0% {
+    transform:  translate(-12px,-40px)  ;
+  }
+  4% {
+    transform:  translate(-86px,-84px)  ;
+  }
+  8% {
+    transform:  translate(-166px,-84px)  ;
+  }
+  11% {
+    transform:  translate(-218px,-42px)  ;
+  }
+  14% {
+    transform:  translate(-234px,1px)  ;
+  }
+  18% {
+    transform:  translate(-239px,-16px)  ;
+  }
+  20% {
+    transform:  translate(-266px,-24px)  ;
+  }
+  23% {
+    transform:  translate(-281px,1px)  ;
+  }
+  26% {
+    transform:  translate(-281px,1px)  ;
+  }
+  100% {
+    transform:  translate(-281px,1px)  ;
+  }
+}
+
+@keyframes up{
+	to{
+		transform: translateY(-50px);
+	}
+}
